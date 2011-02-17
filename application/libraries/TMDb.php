@@ -35,21 +35,15 @@ class TMDb {
 							'Genres.getList'
 						);
 
-	public function call($method, $api_key, $options = array(), $params = NULL)
+	public function call($api_key, $method, $options = "", $params = NULL)
 	{
 		// Check the method exists
 		if(!in_array($method, $this->_methods))
 		{
 			return FALSE;
 		}
-
-		sort($options, SORT_NUMERIC); // Sort options into numerical order
-		
-		$options_string = '/en/json/'.$api_key; // Beginning of URL segments (Language, Type and API Key)
-		
-		foreach($options as $option){
-			$options_string .= '/'.$option;
-		}
+				
+		$options_string = '/en/json/'.$api_key."/".$options; // Put together URL segments (Language, Type and API Key, Options)
 		
 		// Return the full URL string instead (for debugging purposes)
 		// return $this->_api_url.$method.$options_string;
