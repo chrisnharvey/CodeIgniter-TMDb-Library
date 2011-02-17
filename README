@@ -1,0 +1,5 @@
+A The Movie Database (TMDb) library for CodeIgniter that allows easy access to most 
+of the methods in the TMDb API. A more detailed README is coming soon, please use 
+the 'tmdb_test' controller as a guide on how to use this library.
+
+Enjoy!
