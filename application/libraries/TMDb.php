@@ -1,4 +1,4 @@
-<?php
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
  * CodeIgniter TMDb (The Movie Database) API Library
  * 
@@ -34,9 +34,17 @@ class TMDb {
 							'Person.search',
 							'Genres.getList'
 						);
-
-	public function call($api_key, $method, $options = "", $params = NULL)
+	
+	function __construct()
 	{
+		$this->_CI =& get_instance();
+		$this->_CI->load->config("tmdb");
+	}
+
+	public function call($method, $options = "", $params = NULL)
+	{
+		$api_key = $this->_CI->config->item("tmdb_key");
+		
 		// Check the method exists
 		if(!in_array($method, $this->_methods))
 		{
@@ -60,10 +68,11 @@ class TMDb {
 		curl_close ($ch);
 		
 		$response = json_decode($response); // Decode the JSON response into an array
-		$response = $response[0]; // All data is contained in an unneccecary array (removed here)
+		$response = $response; // All data is contained in an unneccecary array (removed here)
 		
 		return $response; // Return the array
 		
 	}
 }
+
 /* End of file */

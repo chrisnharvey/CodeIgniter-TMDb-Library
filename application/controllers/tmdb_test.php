@@ -12,12 +12,12 @@ class Tmdb_test extends CI_Controller {
 		$this->load->library("TMDb");
 		
 		// Configurable Options
-		$api_key = 'APIKEY'; // Your TMDb API Key
+		// Your TMDb API Key can be set in the TMDb config file
 		$method = 'Movie.getInfo'; // A supported TMDb API method
 		$tmdb_movie_id = '105'; // A TMDb movie id (for use in this example)
 		
 		
-		$call = $this->tmdb->call($api_key, $method, $tmdb_movie_id);
+		$call = $this->tmdb->call($method, $tmdb_movie_id);
 		
 		echo "<pre>";
 		
