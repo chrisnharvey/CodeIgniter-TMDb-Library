@@ -68,7 +68,6 @@ class TMDb {
 		curl_close ($ch);
 		
 		$response = json_decode($response); // Decode the JSON response into an array
-		$response = $response; // All data is contained in an unneccecary array (removed here)
 		
 		return $response; // Return the array
 		
