@@ -69,6 +69,11 @@ class TMDb {
 		
 		$response = json_decode($response); // Decode the JSON response into an array
 		
+		if(is_array($response))
+		{
+			$response = $response[0];
+		}
+		
 		return $response; // Return the array
 		
 	}
