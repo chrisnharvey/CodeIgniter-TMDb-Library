@@ -1,3 +1,5 @@
+_Deprecated: Looking for a new maintainer for this package. Open an issue if interested._
+
 This is the first library I have released which is a TMDb (The Movie Database) Library that I wrote that allows easy access to most of the methods in the TMDb API and returns the response in an array. It still needs a lot of work, but please let me know what you think and give me some feedback and suggestions.
 
 First, you must set your TMDb API key in the tmdb.php config file.
